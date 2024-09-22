@@ -1,0 +1,143 @@
+nav {
+    background-color: #D2E6E4;
+    color: #252641;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 10% 0 5%;
+}
+
+nav a {
+
+    font-style: normal;
+    color: #252641;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #FD661F;
+    }
+}
+
+nav li {
+    display: inline;
+    gap: 50px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+/* Estilos para o Hamburger e o Menu Lateral */
+
+.hamburger {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #0B7077;
+    border: none;
+    cursor: pointer;
+}
+
+/* Reposicionando o botão de hamburger quando o menu lateral estiver aberto */
+.hamburger-in-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.nav-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    background-color: #D2E6E4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 50px;
+    transition: right 0.3s ease-in-out;
+}
+
+.nav-lateral a {
+    padding: 10px 20px;
+    color: #252641;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #043873;
+}
+
+.nav-lateral a:hover {
+    background-color: #FD661F;
+    color: #043873;
+}
+
+.nav-lateral.open {
+    right: 0;
+}
+
+
+.language-switch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.language-switch button {
+    background-color: #0B7077;
+    color: #FFF;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.language-switch button:hover {
+    background-color: #fff;
+    color: #0B7077;
+}
+
+.language-switch button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 1118px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    nav li,
+    .items {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-lateral {
+        display: flex;
+    }
+
+    /*vamos centraqlizar o botão de linguagem*/
+    .languageSwitcher{
+        padding: 10% 10%;
+    }
+
+
+}
